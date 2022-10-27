@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';//BrowserRouter历史路由模式  | HashRouter Hash模式，URL里带#号
+import Home from './pages/home';
+import About from './pages/about';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <header>
+          <Link to="/">基座 Home</Link>
+          <Link to="/about">基座 About</Link>
+        </header>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/about" element={<About/>}/>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
