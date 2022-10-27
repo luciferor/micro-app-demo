@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "@arco-design/web-react/dist/css/arco.css";
+import microApp from '@micro-zoe/micro-app';//引入microAPP微前端
+microApp.start();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
